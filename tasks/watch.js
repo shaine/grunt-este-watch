@@ -1,16 +1,5 @@
 /**
   @fileoverview File watcher for Grunt.js
-
-  What's wrong with grunt-contrib-watch?
-   It's slow and buggy, because it uses combination fs.fileWatch and fs.watch.
-
-  Why Este watch is better than grunt-contrib-coffee?
-    It's fast, reliable, and handy.
-    With concise configuration.
-    Without LiveReload console.log mess.
-    And files created in new directories are detected.
-    Also does not use polled fs.fileWatch, which saves battery a lot.
-
   Copyright (c) 2013 Daniel Steigerwald
 */
 module.exports = function(grunt) {
