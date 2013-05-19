@@ -7,42 +7,44 @@ This plugin requires Grunt `~0.4.0`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-contrib-watch --save-dev
+npm install grunt-este-watch --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-este-watch');
 ```
-
-
-
 
 ## Watch task
 _Run this task with the `grunt esteWatch` command._
-
 
 ### Settings
 
 #### options.dirs
 Type: `Array.<string>`
-Default: [
+Default:
+```js
+[
   'bower_components/closure-library/**/',
   'bower_components/este-library/**/',
   '!bower_components/este-library/node_modules/**/',
   'client/**/{js,css}/**/'
 ]
+```
 
 List of watched directories.
 
 #### options.livereload
 Type: `Object`
-Default: {
+Default:
+```js
+{
   enabled: true,
   port: 35729,
   extensions: ['js', 'css']
 }
+```
 
 ### Example
 From [github.com/Steida/este](http://github.com/Steida/este) Gruntfile.coffee.
@@ -109,7 +111,7 @@ Feel free to add this script to your template situation and toggle with some sor
 
 ### FAQs
 
-#### What's wrong with grunt-contrib-watch?
+#### What's wrong with official grunt-contrib-watch?
 It's slow and buggy, because it uses combination fs.fileWatch and fs.watch, for
 historical reason. From Node 0.9.2+, fs.watch is ok.
 
@@ -118,5 +120,12 @@ stability, so that's why I had to create yet another Node.js file watcher.
 This watcher is continuously tested on Mac, Linux, Win platforms.
 
 #### What are grunt-contrib-watch bugs?
-Strange "Abort trap: 6" exceptions. File added in new directory isn't detected.
-LiveReload console.log mess during livereloading. Polling to much files. Etc.
+  - Strange "Abort trap: 6" exceptions.
+  - File added in new directory isn't detected.
+  - LiveReload console.log mess during livereloading.
+  - Polling to much files. Etc.
+
+## License
+Copyright (c) 2013 Daniel Steigerwald
+
+Licensed under the MIT license.
