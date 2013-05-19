@@ -1,6 +1,6 @@
 {
   "name": "grunt-este-watch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run predefined tasks whenever watched file changes. LiveReload included.",
   "main": "index.js",
   "repository": {
