@@ -1,0 +1,23 @@
+{
+  "name": "grunt-este-watch",
+  "version": "0.0.0",
+  "description": "Run predefined tasks whenever watched file changes. LiveReload included.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Steida/grunt-este-watch.git"
+  },
+  "keywords": [
+    "Node",
+    "Watch",
+    "Regarde",
+    "LiveReload"
+  ],
+  "author": "Daniel Steigerwald",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "a86b02c1222e48c2c188c664782adbc992da645c",
+  "bugs": {
+    "url": "https://github.com/Steida/grunt-este-watch/issues"
+  }
+}
