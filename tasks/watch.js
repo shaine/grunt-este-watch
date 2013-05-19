@@ -33,7 +33,9 @@ module.exports = function(grunt) {
         enabled: true,
         port: 35729,
         extensions: ['js', 'css']
-      }
+      },
+      // friendly beep on error
+      beep: false
     });
     done = this.async();
     esteWatchTaskIsRunning = false;
@@ -120,18 +122,24 @@ module.exports = function(grunt) {
 
   // TODO: fork&fix Grunt
   var keepThisTaskRunForeverViaHideousHack = function() {
-    grunt.warn = grunt.fail.warn = function(e) {
-      var message = typeof e === 'string' ? e : e.message;
-      grunt.log.writeln(('Warning: ' + message).yellow);
-      if (grunt.option('force')) return;
-      rerun();
+    var createLog = function(isWarning) {
+      return function(e) {
+        var message = typeof e == 'string' ? e : e.message;
+        var line = options.beep ? '\x07' : '';
+        if (isWarning) {
+          line += ('Warning: ' + message).yellow;
+          if (grunt.option('force')) return;
+        }
+        else {
+          line += ('Fatal error: ' + message).red;
+        }
+        grunt.log.writeln(line);
+        rerun();
+      };
     };
 
-    grunt.fatal = grunt.fail.fatal = function(e) {
-      var message = typeof e === 'string' ? e : e.message;
-      grunt.log.writeln(('Fatal error: ' + message).red);
-      rerun();
-    };
+    grunt.warn = grunt.fail.warn = createLog(true);
+    grunt.fatal = grunt.fail.fatal = createLog(false);
   };
 
   var rerun = function() {
