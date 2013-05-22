@@ -1,4 +1,4 @@
-# grunt-este-watch [![Build Status](https://secure.travis-ci.org/Steida/grunt-este-watch.png?branch=master)](http://travis-ci.org/Steida/grunt-este-watch)
+# grunt-este-watch [![Build Status](https://secure.travis-ci.org/Steida/grunt-este-watch.png?branch=master)](http://travis-ci.org/Steida/grunt-este-watch) [![Dependency Status](https://david-dm.org/steida/grunt-este-watch.png)](https://david-dm.org/steida/grunt-este-watch) [![devDependency Status](https://david-dm.org/steida/grunt-este-watch/dev-status.png)](https://david-dm.org/steida/grunt-este-watch#info=devDependencies)
 > Run predefined tasks whenever watched file changes. LiveReload included.
 
 ## Getting Started
