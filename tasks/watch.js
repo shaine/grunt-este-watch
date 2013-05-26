@@ -235,6 +235,8 @@ module.exports = function(grunt) {
     var ext = path.extname(filepath).slice(1);
     var config = grunt.config.get(['esteWatch', ext]);
     if (!config)
+      config = grunt.config.get(['esteWatch', '*']);
+    if (!config)
       return [];
     var tasks = config(filepath) || [];
     if (!Array.isArray(tasks))
