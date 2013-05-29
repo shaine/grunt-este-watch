@@ -23,7 +23,7 @@ _Run this task with the `grunt esteWatch` command._
 
 #### options.dirs
 
-Note you can specify only directory 'dir', or directory recursively 'dir/**/'.
+Note you hvae to specify only directory 'dir', or directory recursively 'dir/**/' with all its sub directories.
 
 Type: `Array.<string>`
 Default:
@@ -51,7 +51,7 @@ Default:
 
 ### Examples
 
-Watch and compile CoffeeScript
+Watch and compile CoffeeScript.
 ```coffee
 esteWatch:
   options:
