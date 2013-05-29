@@ -22,6 +22,9 @@ _Run this task with the `grunt esteWatch` command._
 ### Settings
 
 #### options.dirs
+
+Note you can specify only directory 'dir', or directory recursively 'dir/**/'.
+
 Type: `Array.<string>`
 Default:
 ```js
@@ -46,7 +49,29 @@ Default:
 }
 ```
 
-### Example
+### Examples
+
+Watch and compile CoffeeScript
+```coffee
+esteWatch:
+  options:
+    # just a dirs, no file paths
+    dirs: ['dirOne/**/', 'dirTwo/**/']
+
+  'coffee': (filepath) ->
+      files = [
+        expand: true
+        src: filepath
+        ext: '.js'
+      ];
+      grunt.config ['coffee', 'app', 'files'], files
+      ['coffee:app']
+
+  # to define all 
+  '*': (filepath) ->
+    return ['urequire:uberscoreUMD']
+```
+
 From [github.com/Steida/este](http://github.com/Steida/este) Gruntfile.coffee.
 
 ```js
