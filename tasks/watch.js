@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   var fs = require('fs');
   var path = require('path');
   var tinylr = require('tiny-lr');
+  var semver = require('semver');
 
   var RESTART_WATCHERS_DEBOUNCE = 10;
 
@@ -19,6 +20,10 @@ module.exports = function(grunt) {
   var options;
   var watchers = [];
   var watchTaskStart;
+
+  if(semver.lt(process.versions.node, '0.9.2')) {
+    grunt.log.error("Use node 0.9.2+, due to buggy fs.watch");
+  }
 
   grunt.registerTask('esteWatch', 'Este files watcher.', function() {
 
