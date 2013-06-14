@@ -14,7 +14,8 @@
     "LiveReload"
   ],
   "dependencies": {
-    "tiny-lr": "git://github.com/Steida/tiny-lr.git"
+    "tiny-lr": "git://github.com/Steida/tiny-lr.git",
+    "semver": "~1.1.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
