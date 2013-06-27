@@ -67,12 +67,12 @@ esteWatch:
       grunt.config ['coffee', 'app', 'files'], files
       ['coffee:app']
 
-  # to define all 
+  # to define all
   '*': (filepath) ->
     return ['urequire:uberscoreUMD']
 ```
 
-From [github.com/Steida/este](http://github.com/Steida/este) Gruntfile.coffee.
+From [github.com/steida/este](http://github.com/steida/este) Gruntfile.coffee.
 
 ```js
 grunt.initConfig({
@@ -140,7 +140,7 @@ Feel free to add this script to your template situation and toggle with some sor
 It's slow and buggy, because it uses combination fs.fileWatch and fs.watch, for
 historical reason. From Node 0.9.2+, fs.watch is ok.
 
-[github.com/Steida/este](http://github.com/Steida/este) Needs maximum performance and
+[github.com/steida/este](http://github.com/steida/este) Needs maximum performance and
 stability, so that's why I had to create yet another Node.js file watcher.
 This watcher is continuously tested on Mac, Linux, Win platforms.
 
