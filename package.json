@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "tiny-lr": "git://github.com/Steida/tiny-lr.git",
-    "semver": "~1.1.4"
+    "semver": "~2.0.8"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
