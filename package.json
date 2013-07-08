@@ -23,7 +23,7 @@
     "grunt-contrib-jshint": "~0.6.0"
   },
   "author": "Daniel Steigerwald",
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "scripts": {
     "test": "grunt test"
