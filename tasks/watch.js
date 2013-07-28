@@ -22,7 +22,7 @@ module.exports = function(grunt) {
   var watchTaskStart;
 
   if(semver.lt(process.versions.node, '0.9.2')) {
-    grunt.log.error("Use node 0.9.2+, due to buggy fs.watch");
+    grunt.fail.warn("Use node 0.9.2+, due to buggy fs.watch");
   }
 
   grunt.registerTask('esteWatch', 'Este files watcher.', function() {
