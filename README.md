@@ -149,6 +149,10 @@ This watcher is continuously tested on Mac, Linux, Win platforms.
   - File added in new directory isn't detected.
   - LiveReload console.log mess during livereloading.
   - Polling to much files. Etc.
+  
+#### Note about editors atomic save
+Node.js fs.watch sometimes does not work with editors atomic save. For example, Node.js v0.10.17 works while
+v0.10.18 doesn't. Fix for SublimeText is easy, just disable it via ```"atomic_save": false```.
 
 ## License
 Copyright (c) 2013 Daniel Steigerwald
