@@ -23,7 +23,7 @@ _Run this task with the `grunt esteWatch` command._
 
 #### options.dirs
 
-Note you hvae to specify only directory 'dir', or directory recursively 'dir/**/' with all its sub directories.
+Note you have to specify only directory ('dir'), or directory recursively ('dir/**/') with all its subdirectories.
 
 Type: `Array.<string>`
 Default:
