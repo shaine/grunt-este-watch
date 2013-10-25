@@ -15,12 +15,12 @@
   ],
   "dependencies": {
     "tiny-lr": "git://github.com/steida/tiny-lr.git",
-    "semver": "~2.1.0"
+    "semver": "~2.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-release": "~0.6.0",
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt-contrib-jshint": "~0.7.0"
   },
   "author": "Daniel Steigerwald",
   "license": "MIT",
