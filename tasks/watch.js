@@ -34,6 +34,7 @@ module.exports = function(grunt) {
         '!bower_components/este-library/node_modules/**/',
         'client/**/{js,css}/**/'
       ],
+      ignoredFiles: [],
       livereload: {
         enabled: true,
         port: 35729,
@@ -200,6 +201,8 @@ module.exports = function(grunt) {
   };
 
   var onFileChange = function(filepath) {
+    if (options.ignoredFiles.indexOf(filepath) != -1)
+      return;
 
     if (options.livereload.enabled)
       changedFilesForLiveReload.push(filepath);
