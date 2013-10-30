@@ -1,6 +1,6 @@
 {
   "name": "grunt-este-watch",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Run predefined tasks whenever watched file changes. LiveReload included.",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,7 @@
     "LiveReload"
   ],
   "dependencies": {
-    "tiny-lr": "git://github.com/steida/tiny-lr.git",
+    "tiny-lr": "0.0.5",
     "semver": "~2.2.0"
   },
   "devDependencies": {
