@@ -10,7 +10,7 @@
   "keywords": [
     "Node",
     "Watch",
-    "Regarde",
+    "gruntplugin",
     "LiveReload"
   ],
   "dependencies": {
