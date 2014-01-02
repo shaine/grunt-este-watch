@@ -10,6 +10,8 @@ module.exports = function(grunt) {
   var semver = require('semver');
 
   var RESTART_WATCHERS_DEBOUNCE = 10;
+  var WAIT_FOR_UNLOCK_INTERVAL = 10;
+  var WAIT_FOR_UNLOCK_TRY_LIMIT = 50;
 
   var changedFilesForLiveReload = [];
   var done;
@@ -20,6 +22,7 @@ module.exports = function(grunt) {
   var options;
   var watchers = [];
   var watchTaskStart;
+  var unlockTimer = null;
 
   if(semver.lt(process.versions.node, '0.9.2')) {
     grunt.fail.warn("Use node 0.9.2+, due to buggy fs.watch");
@@ -235,8 +238,27 @@ module.exports = function(grunt) {
     if (options.livereload.enabled)
       tasks.push('esteWatchLiveReload');
     tasks.push('esteWatch');
-    done();
-    grunt.task.run(tasks);
+
+    var waitTryCount = 0;
+    var waitForFileUnlock = function() {
+      var isLocked = false;
+      waitTryCount++;
+      try {
+        fs.readFileSync(filepath);
+      } catch (e) {
+        // File is locked
+        isLocked = true;
+      }
+      if(!isLocked || waitTryCount > WAIT_FOR_UNLOCK_TRY_LIMIT) {
+        done();
+        grunt.task.run(tasks);
+      } else {
+        grunt.verbose.writeln('Waiting for file to unlock (' + waitTryCount + '): ' + filepath);
+        clearTimeout(unlockTimer);
+        unlockTimer = setTimeout(waitForFileUnlock, WAIT_FOR_UNLOCK_INTERVAL);
+      }
+    };
+    waitForFileUnlock();
   };
 
   var getFilepathTasks = function(filepath) {
