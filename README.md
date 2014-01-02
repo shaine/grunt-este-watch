@@ -140,11 +140,11 @@ Feel free to add this script to your template situation and toggle with some sor
 It's slow and buggy, because it uses combination fs.fileWatch and fs.watch, for
 historical reason. From Node 0.9.2+, fs.watch is ok.
 
-[github.com/steida/este](http://github.com/steida/este) Needs maximum performance and
+[github.com/steida/este](http://github.com/steida/este) needs maximum performance and
 stability, so that's why I had to create yet another Node.js file watcher.
 This watcher is continuously tested on Mac, Linux, Win platforms.
 
-#### What are grunt-contrib-watch bugs?
+#### grunt-contrib-watch Issues
   - Strange "Abort trap: 6" exceptions.
   - File added in new directory isn't detected.
   - LiveReload console.log mess during livereloading.
