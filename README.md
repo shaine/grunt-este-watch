@@ -50,6 +50,8 @@ Default:
   enabled: true,
   port: 35729,
   extensions: ['js', 'css']
+  key: null, // provide a filepath or Buffer for `key` and `cert` to enable SSL.
+  cert: null
 }
 ```
 
@@ -133,10 +135,11 @@ Live reloading is built into the watch task and enabled by default.
 Once you've started a live reload server you'll be able to access the live reload script. To enable live reload on your page, add a script tag before your closing `</body>` tag pointing to the `livereload.js` script:
 
 ```html
-<script src="http://localhost:35729/livereload.js"></script>
+<script src="//localhost:35729/livereload.js"></script>
 ```
 
-Feel free to add this script to your template situation and toggle with some sort of `dev` flag.
+Feel free to add this script to your template situation and toggle with some sort of `dev` flag. Note that if you are using SSL in dev,
+you will need to add a `key` and `cert` config to `options.livereload`.
 
 ### FAQs
 
