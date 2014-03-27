@@ -108,7 +108,13 @@ module.exports = function(grunt) {
     restartWatchers, RESTART_WATCHERS_DEBOUNCE);
 
   var runLiveReloadServer = function() {
-    lrServer = tinylr();
+    // If key and cert file paths are provided, read them.
+    ['key', 'cert'].forEach(function(attr) {
+      if (options.livereload[attr] && !Buffer.isBuffer(options.livereload[attr])) {
+        options.livereload[attr] = grunt.file.read(options.livereload[attr]);
+      }
+    });
+    lrServer = tinylr(options.livereload);
     lrServer.server.removeAllListeners('error');
     lrServer.server.on('error', function(err) {
       if (err.code === 'EADDRINUSE') {
