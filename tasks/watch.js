@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
   var fs = require('fs');
   var path = require('path');
-  var tinylr = require('tiny-lr');
+  var tinylr = require('tiny-lr-fork');
   var semver = require('semver');
 
   var RESTART_WATCHERS_DEBOUNCE = 10;
