@@ -1,7 +1,7 @@
 # grunt-este-watch [![Build Status](https://secure.travis-ci.org/steida/grunt-este-watch.png?branch=master)](http://travis-ci.org/steida/grunt-este-watch) [![Dependency Status](https://david-dm.org/steida/grunt-este-watch.png)](https://david-dm.org/steida/grunt-este-watch) [![devDependency Status](https://david-dm.org/steida/grunt-este-watch/dev-status.png)](https://david-dm.org/steida/grunt-este-watch#info=devDependencies)
 > Run predefined tasks whenever watched file changes. LiveReload included.
 
-Update: I extracted core watching functionality into separate [module](https://github.com/steida/este-watch).
+__Update__: I extracted core watching functionality into separate [module](https://github.com/steida/este-watch).
 So you can use it with [gulpjs](http://gulpjs.com) for example. Tests are included.
 If you want to participate on open source and become famous, send me pull request to update this grunt-este-watch module.
 
