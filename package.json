@@ -14,13 +14,13 @@
     "LiveReload"
   ],
   "dependencies": {
-    "tiny-lr-fork": "git://github.com/shama/tiny-lr.git",
-    "semver": "~2.2.0"
+    "semver": "~2.2.0",
+    "tiny-lr-fork": "0.0.5"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-release": "~0.6.0",
-    "grunt-contrib-jshint": "~0.8.0"
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-release": "^0.7.0"
   },
   "author": "Daniel Steigerwald",
   "license": "MIT",
