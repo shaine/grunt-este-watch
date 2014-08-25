@@ -14,7 +14,7 @@
     "LiveReload"
   ],
   "dependencies": {
-    "semver": "~2.2.0",
+    "semver": "^3.0.1",
     "tiny-lr-fork": "0.0.5"
   },
   "devDependencies": {
