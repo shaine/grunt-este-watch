@@ -118,7 +118,7 @@ module.exports = function(grunt) {
     lrServer.server.removeAllListeners('error');
     lrServer.server.on('error', function(err) {
       if (err.code === 'EADDRINUSE') {
-        grunt.fatal('Port ' + options.port + ' is already in use by another process.');
+        grunt.fatal('Port ' + options.livereload.port + ' is already in use by another process.');
         grunt.fatal('Open OS process manager and kill all node\'s processes.');
       } else {
         grunt.fatal(err);
