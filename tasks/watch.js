@@ -280,7 +280,7 @@ module.exports = function(grunt) {
       config = grunt.config.get(['esteWatch', '*']);
     if (!config)
       return [];
-    var tasks = config(filepath) || [];
+    var tasks = config(filepath, grunt) || [];
     if (!Array.isArray(tasks))
       tasks = [tasks];
     return tasks;
