@@ -212,8 +212,8 @@ module.exports = function(grunt) {
   var onFileChange = function(filepath) {
     var minimatchOptions = {
       dot: true,
-      matchBase: true, 
-      nocomment: true, 
+      matchBase: true,
+      nocomment: true,
       nonegate: true
     };
     if (grunt.file.isMatch(minimatchOptions, options.ignoredFiles, filepath))
