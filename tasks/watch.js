@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 
   var rerun = function() {
     grunt.task.clearQueue();
-    grunt.task.run('esteWatch');
+    grunt.task.run(grunt.task.current.nameArgs);
   };
 
   var dispatchWaitingChanges = function() {
