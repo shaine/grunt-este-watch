@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 
   var rerun = function() {
     grunt.task.clearQueue();
-    grunt.task.run('esteWatch');
+    grunt.task.run(grunt.task.current.nameArgs);
   };
 
   var dispatchWaitingChanges = function() {
@@ -249,7 +249,7 @@ module.exports = function(grunt) {
     var tasks = getFilepathTasks(filepath);
     if (options.livereload.enabled)
       tasks.push('esteWatchLiveReload');
-    tasks.push('esteWatch');
+    tasks.push(grunt.task.current.nameArgs);
 
     var waitTryCount = 0;
     var waitForFileUnlock = function() {
