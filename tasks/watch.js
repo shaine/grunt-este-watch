@@ -249,7 +249,7 @@ module.exports = function(grunt) {
     var tasks = getFilepathTasks(filepath);
     if (options.livereload.enabled)
       tasks.push('esteWatchLiveReload');
-    tasks.push('esteWatch');
+    tasks.push(grunt.task.current.nameArgs);
 
     var waitTryCount = 0;
     var waitForFileUnlock = function() {
