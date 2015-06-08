@@ -161,7 +161,7 @@ module.exports = function(grunt) {
 
   var rerun = function() {
     grunt.task.clearQueue();
-    grunt.task.run(grunt.task.current.nameArgs);
+    grunt.task.run(taskName);
   };
 
   var dispatchWaitingChanges = function() {
