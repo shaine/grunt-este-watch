@@ -23,6 +23,7 @@ module.exports = function(grunt) {
   var watchers = [];
   var watchTaskStart;
   var unlockTimer = null;
+  var taskName = 'esteWatch';
 
   if(semver.lt(process.versions.node, '0.9.2')) {
     grunt.fail.warn("Use node 0.9.2+, due to buggy fs.watch");
@@ -53,6 +54,7 @@ module.exports = function(grunt) {
     grunt.log.ok('Waiting...');
 
     if (firstRun) {
+      taskName = grunt.task.current.nameArgs;
       firstRun = false;
       restartWatchers();
       if (options.livereload.enabled)
@@ -159,7 +161,7 @@ module.exports = function(grunt) {
 
   var rerun = function() {
     grunt.task.clearQueue();
-    grunt.task.run(grunt.task.current.nameArgs);
+    grunt.task.run(taskName);
   };
 
   var dispatchWaitingChanges = function() {
@@ -249,7 +251,7 @@ module.exports = function(grunt) {
     var tasks = getFilepathTasks(filepath);
     if (options.livereload.enabled)
       tasks.push('esteWatchLiveReload');
-    tasks.push(grunt.task.current.nameArgs);
+    tasks.push(taskName);
 
     var waitTryCount = 0;
     var waitForFileUnlock = function() {
